@@ -1,16 +1,9 @@
-# weighmywaterbottle
+# Weigh My Water Bottle
 
-A new Flutter project.
+I bought a weighing machine to measure food quantity while cooking, I am planning to use it for logging water as well.
 
-## Getting Started
+## Wireframe and project plan
 
-This project is a starting point for a Flutter application.
+Its a small app, basic interface to perform Add and List operation, nothing much.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![WireFrame](https://github.com/akshaybengani/weighmywaterbottle/blob/master/files/wireframe.jpg?raw=true)
