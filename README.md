@@ -6,4 +6,4 @@ I bought a weighing machine to measure food quantity while cooking, I am plannin
 
 Its a small app, basic interface to perform Add and List operation, nothing much.
 
-![WireFrame](https://github.com/akshaybengani/weighmywaterbottle/blob/master/files/wireframe.jpg?raw=true)
+![WireFrame](https://github.com/akshaybengani/weighmywaterbottle/blob/master/files/wireframe.png?raw=true)
