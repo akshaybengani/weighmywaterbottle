@@ -1,7 +1,6 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:weighmywaterbottle/services/analytics_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,11 +28,7 @@ class WeighMyWaterBottle extends StatelessWidget {
           alignment: Alignment.center,
           child: ElevatedButton(
             child: const Text("Test"),
-            onPressed: () async {
-              AnalyticsService.instance.logEvent(
-                name: "test_event",
-              );
-            },
+            onPressed: () async {},
           ),
         ),
       ),
