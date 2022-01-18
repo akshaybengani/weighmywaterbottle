@@ -22,7 +22,16 @@ dependencies:
   connectivity_plus: 1.1.0
 
   # Firebase Core
-  firebase_core: 1.10.0
+  firebase_core: ^1.11.0
+
+  # Firebase Authentication
+  firebase_auth: ^3.3.5
+
+  # Firebase Analytics
+  firebase_analytics: ^9.0.5
+
+  # Firebase Database
+  firebase_database: ^9.0.5
 
   # Confetti
   confetti: ^0.6.0

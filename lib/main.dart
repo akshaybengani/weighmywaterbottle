@@ -1,26 +1,39 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:weighmywaterbottle/services/analytics_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
 
-  runApp(const WeighMyWaterBottle());
+  runApp(WeighMyWaterBottle());
 }
 
 class WeighMyWaterBottle extends StatelessWidget {
-  const WeighMyWaterBottle({Key? key}) : super(key: key);
+  WeighMyWaterBottle({Key? key}) : super(key: key);
+
+  final FirebaseAnalytics _analytics = FirebaseAnalytics.instance;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      navigatorObservers: [
+        FirebaseAnalyticsObserver(
+          analytics: _analytics,
+        ),
+      ],
       home: Scaffold(
         body: Container(
           alignment: Alignment.center,
           child: ElevatedButton(
             child: const Text("Test"),
-            onPressed: () async {},
+            onPressed: () async {
+              AnalyticsService.instance.logEvent(
+                name: "test_event",
+              );
+            },
           ),
         ),
       ),
