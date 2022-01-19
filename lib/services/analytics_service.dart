@@ -5,6 +5,7 @@ class AnalyticsService {
   static final AnalyticsService instance = AnalyticsService._();
 
   AnalyticsService._();
+
   FirebaseAnalytics analytics = FirebaseAnalytics.instance;
 
   void logEvent({

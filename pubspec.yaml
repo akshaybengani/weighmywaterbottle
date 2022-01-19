@@ -33,6 +33,9 @@ dependencies:
   # Firebase Database
   firebase_database: ^9.0.5
 
+  # Firebase CrashAnalytics
+  firebase_crashlytics: ^2.4.5
+
   # For Accessing Google Fit API
   health: ^3.4.3
 
