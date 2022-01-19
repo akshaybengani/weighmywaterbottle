@@ -1,4 +1,5 @@
 import 'package:health/health.dart';
+import 'package:weighmywaterbottle/services/log_service.dart';
 
 class HealthService {
   static final HealthService instance = HealthService._();
@@ -8,7 +9,7 @@ class HealthService {
   final List<HealthDataAccess> _access = [HealthDataAccess.WRITE];
   final List<HealthDataAccess> _permission = [HealthDataAccess.READ_WRITE];
 
-  HealthFactory _health = HealthFactory();
+  final HealthFactory _health = HealthFactory();
 
   Future<bool> get requestPermission async {
     return _health.requestAuthorization(_type, permissions: _permission);
@@ -44,7 +45,7 @@ class HealthService {
       now,
     );
 
-    print("Water intake is $success");
+    LogService.log("Water intake is $success");
     return success;
   }
 }

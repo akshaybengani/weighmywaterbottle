@@ -8,6 +8,7 @@ import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:weighmywaterbottle/services/health_service.dart';
+import 'package:weighmywaterbottle/services/log_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -45,9 +46,9 @@ class WeighMyWaterBottle extends StatelessWidget {
               if (permissionStatus) {
                 bool recordStatus =
                     await HealthService.instance.logWater(waterML: 100);
-                print("Water record status $recordStatus");
+                LogService.log("Water record status $recordStatus");
               } else {
-                print("Water Logging permission denied");
+                LogService.log("Water Logging permission denied");
               }
             },
           ),

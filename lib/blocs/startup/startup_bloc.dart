@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weighmywaterbottle/providers/user_data.dart';
 import 'package:weighmywaterbottle/services/auth_service.dart';
 import 'package:weighmywaterbottle/services/connection_service.dart';
+import 'package:weighmywaterbottle/services/log_service.dart';
 import 'package:weighmywaterbottle/services/wayfinder.dart';
 
 // Event
@@ -51,7 +52,8 @@ class StartupBloc extends Bloc<StartupEvent, void> {
     FlutterError.onError = (final FlutterErrorDetails details) async {
       FirebaseCrashlytics.instance
           .recordError(details.exception, details.stack)
-          .then((_) => print("🔥🔥FCA recording untracked errors🔥🔥"));
+          .then(
+              (_) => LogService.log("🔥🔥FCA recording untracked errors🔥🔥"));
     };
   }
 }

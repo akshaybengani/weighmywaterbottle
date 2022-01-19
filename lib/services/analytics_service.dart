@@ -1,5 +1,6 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/foundation.dart';
+import 'package:weighmywaterbottle/services/log_service.dart';
 
 class AnalyticsService {
   static final AnalyticsService instance = AnalyticsService._();
@@ -25,9 +26,7 @@ class AnalyticsService {
     }
 
     analytics.logEvent(name: name, parameters: params).then((_) {
-      if (kDebugMode) {
-        print("\n📒📒 Event logged 📒📒\n📒📒 $name 📒📒");
-      }
+      LogService.log("\n📒📒 Event logged 📒📒\n📒📒 $name 📒📒");
     });
   }
 }
