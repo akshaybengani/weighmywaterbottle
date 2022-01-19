@@ -39,6 +39,10 @@ dependencies:
   # For Accessing Google Fit API
   health: ^3.4.3
 
+  # Change Notifier Providers
+  # keep it 5.0.0 because flutter bloc depends on it
+  provider: 5.0.0
+
   # Confetti
   confetti: ^0.6.0
 

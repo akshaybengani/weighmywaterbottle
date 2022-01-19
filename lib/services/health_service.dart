@@ -49,3 +49,15 @@ class HealthService {
     return success;
   }
 }
+
+
+  // bool permissionStatus =
+  //                 await HealthService.instance.requestPermission;
+
+  //             if (permissionStatus) {
+  //               bool recordStatus =
+  //                   await HealthService.instance.logWater(waterML: 100);
+  //               LogService.log("Water record status $recordStatus");
+  //             } else {
+  //               LogService.log("Water Logging permission denied");
+  //             }
