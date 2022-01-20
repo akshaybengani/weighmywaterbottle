@@ -55,5 +55,7 @@ class StartupBloc extends Bloc<StartupEvent, void> {
           .then(
               (_) => LogService.log("🔥🔥FCA recording untracked errors🔥🔥"));
     };
+
+    Wayfinder.instance.intro();
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weighmywaterbottle/blocs/startup/startup_bloc.dart';
+import 'package:weighmywaterbottle/screens/intro/intro_screen.dart';
 import 'package:weighmywaterbottle/screens/utils/no_connection_screen.dart';
 import 'package:weighmywaterbottle/services/analytics_service.dart';
 
@@ -70,6 +71,17 @@ class Wayfinder {
           );
         },
         settings: RouteSettings(name: (NoConnectionScreen).toString()),
+      ),
+    );
+  }
+
+  void intro() {
+    _replace(
+      materialPageRoute: MaterialPageRoute(
+        builder: (final BuildContext _) {
+          return const IntroScreen();
+        },
+        settings: RouteSettings(name: (IntroScreen).toString()),
       ),
     );
   }

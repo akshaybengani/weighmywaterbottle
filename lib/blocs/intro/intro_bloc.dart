@@ -20,6 +20,14 @@ class IntroBloc extends Bloc<IntroEvent, IntroState> {
   Stream<IntroState> mapEventToState(
     final IntroEvent event,
   ) async* {
-    if (event is ConnectWithGoogle) {}
+    if (event is ConnectWithGoogle) {
+      yield IntroLoading();
+
+      await Future.delayed(
+        const Duration(seconds: 3),
+      );
+
+      yield IntroLoaded();
+    }
   }
 }

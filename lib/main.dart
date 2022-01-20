@@ -7,21 +7,25 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:weighmywaterbottle/providers/user_data_provider.dart';
+import 'package:weighmywaterbottle/screens/startup/startup_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
 
   runZonedGuarded(() {
-    runApp(MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-          create: (final BuildContext _) {
-            return UserDataProvider();
-          },
-        ),
-      ],
-    ));
+    runApp(
+      MultiProvider(
+        providers: [
+          ChangeNotifierProvider(
+            create: (final BuildContext _) {
+              return UserDataProvider();
+            },
+          ),
+        ],
+        child: WeighMyWaterBottle(),
+      ),
+    );
   }, FirebaseCrashlytics.instance.recordError);
   FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(kReleaseMode);
 }
@@ -31,23 +35,21 @@ class WeighMyWaterBottle extends StatelessWidget {
 
   final FirebaseAnalytics _analytics = FirebaseAnalytics.instance;
 
+  final GlobalKey<NavigatorState> _navigatorKey = GlobalKey<NavigatorState>();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      navigatorKey: _navigatorKey,
+      title: "Weight My Water Bottle",
       debugShowCheckedModeBanner: false,
       navigatorObservers: [
         FirebaseAnalyticsObserver(
           analytics: _analytics,
         ),
       ],
-      home: Scaffold(
-        body: Container(
-          alignment: Alignment.center,
-          child: ElevatedButton(
-            child: const Text("Test"),
-            onPressed: () {},
-          ),
-        ),
+      home: StartupScreen(
+        navigatorKey: _navigatorKey,
       ),
     );
   }
