@@ -28,6 +28,12 @@ class BottleInfoBloc extends Bloc<BottleInfoEvent, BottleInfoState> {
   Stream<BottleInfoState> mapEventToState(
     final BottleInfoEvent event,
   ) async* {
-    if (event is UpdateBottleInfo) {}
+    if (event is UpdateBottleInfo) {
+      yield BottleInfoLoading();
+
+      await Future.delayed(const Duration(seconds: 1));
+
+      yield BottleInfoLoaded();
+    }
   }
 }

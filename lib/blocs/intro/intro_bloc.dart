@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weighmywaterbottle/services/wayfinder.dart';
 
 // Event
 abstract class IntroEvent {}
@@ -24,8 +25,10 @@ class IntroBloc extends Bloc<IntroEvent, IntroState> {
       yield IntroLoading();
 
       await Future.delayed(
-        const Duration(seconds: 3),
+        const Duration(seconds: 1),
       );
+
+      Wayfinder.instance.bottleInfoReplace();
 
       yield IntroLoaded();
     }
