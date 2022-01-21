@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:weighmywaterbottle/blocs/startup/startup_bloc.dart';
 import 'package:weighmywaterbottle/screens/bottle_info/bottle_info_screen.dart';
+import 'package:weighmywaterbottle/screens/dashboard/dashboard_screen.dart';
 import 'package:weighmywaterbottle/screens/intro/intro_screen.dart';
 import 'package:weighmywaterbottle/screens/utils/no_connection_screen.dart';
+import 'package:weighmywaterbottle/screens/water_intake/water_intake_screen.dart';
 import 'package:weighmywaterbottle/services/analytics_service.dart';
 
 class Wayfinder {
@@ -94,6 +96,28 @@ class Wayfinder {
           return const BottleInfoScreen();
         },
         settings: RouteSettings(name: (BottleInfoScreen).toString()),
+      ),
+    );
+  }
+
+  void dashboard() {
+    _replace(
+      materialPageRoute: MaterialPageRoute(
+        builder: (final BuildContext _) {
+          return const DashboardScreen();
+        },
+        settings: RouteSettings(name: (DashboardScreen).toString()),
+      ),
+    );
+  }
+
+  void waterIntake() {
+    _push(
+      materialPageRoute: MaterialPageRoute(
+        builder: (final BuildContext _) {
+          return const WaterIntakeScreen();
+        },
+        settings: RouteSettings(name: (WaterIntakeScreen).toString()),
       ),
     );
   }

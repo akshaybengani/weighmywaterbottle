@@ -32,7 +32,11 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
 
       await Future.delayed(const Duration(seconds: 1));
 
-      yield DashboardLoaded(intakeHistory: []);
+      yield DashboardLoaded(
+        intakeHistory: [
+          Intake("id", 10, DateTime.now()),
+        ],
+      );
     }
   }
 }

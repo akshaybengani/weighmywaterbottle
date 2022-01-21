@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weighmywaterbottle/services/wayfinder.dart';
 
 // Event
 abstract class BottleInfoEvent {}
@@ -32,6 +33,8 @@ class BottleInfoBloc extends Bloc<BottleInfoEvent, BottleInfoState> {
       yield BottleInfoLoading();
 
       await Future.delayed(const Duration(seconds: 1));
+
+      Wayfinder.instance.dashboard();
 
       yield BottleInfoLoaded();
     }
